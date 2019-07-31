@@ -1,11 +1,3 @@
-##' Get the Complete list of citations for a Publication
-##'
-##' @author Cristian Ramirez Atencia
-##'
-##'
-##' @param cid a Publication citations ID
-##' @return a data frame containing the publications citing the Publication
-##' @export
 get_citations_publications = function(cid)
 {
   auths = ""
@@ -21,6 +13,17 @@ get_citations_publications = function(cid)
   return(pubs)
 }
 
+#' Search publication
+#'
+#' @param text 
+#' @param exact_text 
+#' @param author 
+#' @param from 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 search_publication = function(text, exact_text="", author="",from=0)
 {
   url_template = "http://scholar.google.com/scholar?as_q=%s&as_epq=%s&as_sauthors=%s&start=%s"
@@ -107,6 +110,15 @@ get_num_results = function(page)
     return(0)
 }
 
+#' Get number of citations in a year
+#'
+#' @param cid 
+#' @param year 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 get_citation_year = function(cid,year)
 {
   url_template = "http://scholar.google.com/scholar?cites=%s&as_ylo=%s&as_yhi=%s"
