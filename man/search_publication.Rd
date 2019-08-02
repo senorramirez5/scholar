@@ -7,14 +7,17 @@
 search_publication(text, exact_text = "", author = "", from = 0)
 }
 \arguments{
-\item{text}{}
+\item{text}{Text to search}
 
-\item{exact_text}{}
+\item{exact_text}{Exact text to search}
 
-\item{author}{}
+\item{author}{Author from publication}
 
-\item{from}{}
+\item{from}{Starting point of search}
+}
+\value{
+Publication dataframe
 }
 \description{
-Search publication
+Searches publications in Google Scholar.
 }

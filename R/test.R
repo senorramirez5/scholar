@@ -14,16 +14,16 @@ get_citations_publications = function(cid)
 }
 
 #' Search publication
+#' 
+#' Searches publications in Google Scholar.
 #'
-#' @param text 
-#' @param exact_text 
-#' @param author 
-#' @param from 
+#' @param text Text to search
+#' @param exact_text Exact text to search
+#' @param author Author from publication
+#' @param from Starting point of search
 #'
-#' @return
+#' @return Publication dataframe
 #' @export
-#'
-#' @examples
 search_publication = function(text, exact_text="", author="",from=0)
 {
   url_template = "http://scholar.google.com/scholar?as_q=%s&as_epq=%s&as_sauthors=%s&start=%s"
@@ -111,14 +111,14 @@ get_num_results = function(page)
 }
 
 #' Get number of citations in a year
+#' 
+#' Gets the number of citations of a publication in a year.
 #'
-#' @param cid 
-#' @param year 
+#' @param cid Citation id of the publication
+#' @param year Year to search
 #'
-#' @return
+#' @return Number of publications in a year
 #' @export
-#'
-#' @examples
 get_citation_year = function(cid,year)
 {
   url_template = "http://scholar.google.com/scholar?cites=%s&as_ylo=%s&as_yhi=%s"

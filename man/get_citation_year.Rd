@@ -7,10 +7,13 @@
 get_citation_year(cid, year)
 }
 \arguments{
-\item{cid}{}
+\item{cid}{Citation id of the publication}
 
-\item{year}{}
+\item{year}{Year to search}
+}
+\value{
+Number of publications in a year
 }
 \description{
-Get number of citations in a year
+Gets the number of citations of a publication in a year.
 }
