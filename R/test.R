@@ -26,7 +26,7 @@ get_citations_publications = function(cid)
 #' @export
 search_publication = function(text, exact_text="", author="",from=0)
 {
-  url_template = "http://scholar.google.com/scholar?as_q=%s&as_epq=%s&as_sauthors=%s&start=%s"
+  url_template = "http://scholar.google.com/scholar?as_q=%s&as_epq=%s&as_sauthors=%s&start=%s&hl=en"
   url = sprintf(url_template, encode(text), encode(exact_text),encode(author),from)
   
   #https://scholar.google.com/scholar?start=10&as_q=ecj%3A+a+java-based+evolutionary&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=luke&as_publication=&as_ylo=&as_yhi=&hl=es&as_sdt=0%2C5
