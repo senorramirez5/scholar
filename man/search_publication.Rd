@@ -4,7 +4,8 @@
 \alias{search_publication}
 \title{Search publication}
 \usage{
-search_publication(text, exact_text = "", author = "", from = 0)
+search_publication(text, exact_text = "", author = "", from = 0,
+  until = 10)
 }
 \arguments{
 \item{text}{Text to search}
@@ -14,6 +15,8 @@ search_publication(text, exact_text = "", author = "", from = 0)
 \item{author}{Author from publication}
 
 \item{from}{Starting point of search}
+
+\item{until}{Ending point of search}
 }
 \value{
 Publication dataframe
