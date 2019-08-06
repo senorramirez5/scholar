@@ -32,13 +32,12 @@ search_publication = function(text, exact_text="", author="",from=0,until=10)
   pubs<-search_publication_one_page(text,exact_text,author,from)
   from <- from+10
   while (from < until) {
-    print("hola")
     pub<-search_publication_one_page(text,exact_text,author,from)
     if(!is.data.frame(pub)){
       from<-until
     }
     else{
-      pubs %<>% dplyr::bind_rows()
+      pubs %<>% dplyr::bind_rows(pub)
       from <- from+10
     }
   }
