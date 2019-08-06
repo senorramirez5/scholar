@@ -32,6 +32,7 @@ get_scholar_resp <- function(url, attempts_left = 5) {
     
     stopifnot(attempts_left > 0)
     
+    #httr::html_session("you-url", use_proxy("proxy-ip", port))
     resp <- httr::GET(url, handle = scholar_handle())
     
     # On a successful GET, return the response
