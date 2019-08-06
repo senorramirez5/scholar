@@ -129,7 +129,7 @@ get_num_results = function(page)
   results<-rvest::html_nodes(page,xpath="//div[@class='gs_ab_mdw']")[2] %>% rvest::html_text()
   results_split<-unlist(stringr::str_split(results," "))
   pos<-stringr::str_detect(results_split,"result") %>% which()-1
-  result<-results_split[pos]
+  result<-results_split[pos] %>% stringr::str_remove("\\.")
   if (length(result) > 0)
     return(as.integer(result))
   else
