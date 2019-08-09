@@ -67,7 +67,7 @@ search_publication_one_page = function(text,exact_text,author,from)
     ids<- links %>% rvest::html_attr("href") %>%
       stringr::str_extract("user=[a-zA-Z0-9_\\-]*&") %>% stringr::str_sub(6,-2)
     new_data <- data %>% rvest::html_text() %>% stringr::str_split("- ") %>% unlist()
-    auths<-new_data[1] %>% stringr::str_sub(1,-2) %>% stringr::str_replace("…","") %>%
+    auths<-new_data[1] %>% stringr::str_sub(1,-2) %>% stringr::str_replace("…,","") %>% stringr::str_replace("…","") %>%
       stringr::str_split(",") %>% unlist() %>% stringr::str_trim()
     authids<-rep(NA,length(auths))
     index<-match(link_authors,auths)
